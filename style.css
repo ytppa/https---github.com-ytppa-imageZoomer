@@ -1,0 +1,159 @@
+:root {
+  --black-1000: hsl(0, 0%, 10%);
+  --black-600: hsl(0, 0%, 40%);
+  --black-300: hsl(0, 0%, 70%);
+  --black-050: hsl(0, 0%, 95%);
+  --white-1000: hsl(0, 0%, 100%);
+}
+
+html,
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 20px;
+  color: var(--black-1000);
+  background-color: var(--white-1000);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body.fixed {
+  overflow: hidden;
+}
+
+.header {
+  padding: 0.5rem 0;
+  background-color: var(--white-1000);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+.header--inner {
+  margin: 0 auto;
+  width: min(100vw - 2rem, 1440px);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 3rem;
+}
+.header--inner .logo,
+.header--inner .cart {
+  flex: 0 0 auto;
+}
+.header--inner .menu {
+  flex: 1 1 auto;
+}
+
+.logo {
+  font-size: 1.25rem;
+  font-weight: 800;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.25rem;
+  color: var(--black-1000);
+  background-color: var(--black-050);
+  display: inline-block;
+  padding: 0.25rem 0.5rem;
+}
+
+.menu {
+  display: flex;
+  gap: 3rem;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  overflow: hidden;
+  max-height: 2rem;
+}
+.menu--item {
+  color: var(--black-1000);
+  cursor: pointer;
+  display: inline-block;
+  line-height: 1;
+  padding: 10px 5px;
+}
+.menu--item_light {
+  color: var(--black-600);
+}
+
+.wrapper {
+  width: min(100vw - 1rem, 1440px);
+  margin: 0 auto;
+  padding-top: 6rem;
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  align-items: stretch;
+}
+
+.image-n-card {
+  display: flex;
+  gap: 3rem;
+}
+.image-n-card--left {
+  flex: 1 1 auto;
+}
+.image-n-card--right {
+  flex: 0 1 25%;
+}
+.image-n-card .image {
+  width: 100%;
+  height: auto;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.details {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.details .tabs {
+  align-self: flex-start;
+}
+.details-content {
+  width: 50%;
+}
+
+.tabs {
+  padding: 0.4rem;
+  border-radius: 0.6rem;
+  background-color: var(--black-050);
+  display: inline-flex;
+  gap: 0.4rem;
+}
+.tabs--item {
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  border-radius: 0.2rem;
+  color: var(--black-1000);
+  background-color: var(--black-050);
+  transition: color 0.2s ease-out, background-color 0.2s ease-out;
+}
+.tabs--item:not(.tabs--item_active):hover {
+  background-color: var(--black-600);
+  color: white;
+}
+.tabs--item_active {
+  color: var(--white-1000);
+  background-color: var(--black-1000);
+  cursor: default;
+}
+
+.pr-item {
+  display: flex;
+}
+.pr-item--value, .pr-item--label {
+  flex: 1 1 auto;
+}
+.pr-item--label {
+  color: var(--black-300);
+}
+.pr-item--value {
+  justify-self: flex-end;
+}
