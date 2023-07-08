@@ -9,6 +9,8 @@
 
 html,
 body
+    padding: 0
+    margin: 0
     font-family: Arial, Helvetica, sans-serif
     font-size: 20px
     color: var(--black-1000)
@@ -19,6 +21,8 @@ body
 
 body.fixed
     overflow: hidden
+
+
 
 .header
     padding: .5rem 0
@@ -83,6 +87,9 @@ body.fixed
     gap: 4rem
     align-items: stretch
 
+@media screen and (max-width: 768px)
+    .wrapper
+        padding-inline: .5rem
 
 .image-n-card
     display: flex
@@ -91,17 +98,44 @@ body.fixed
     &--left
         flex: 1 1 auto
     &--right
-        flex: 0 1 calc(100% * 3 / 12)
+        flex: 0 0 min(30%, 400px)
 
     .image
         width: 100%
         height: auto
+
+@media screen and (max-width: 768px)
+    .image-n-card
+        flex-direction: column
+        gap: 2rem
+
+        &--left,
+        &--right
+            flex-basis: 100%
+
+.product-name
+   font-weight: 600
+   font-size: 1.2em
 
 .card
     display: flex
     flex-direction: column
     gap: 2rem
 
+.small
+    font-size: .85em
+    color: var(--black-600)
+    max-width: 60ch
+
+.price
+
+   &--current
+      font-weight: 700
+      font-size: 1.2em
+
+   &--old
+      color: var(--black-600)
+      text-decoration: line-through
 
 .details
     display: flex
