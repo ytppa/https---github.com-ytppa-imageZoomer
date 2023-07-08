@@ -8,6 +8,8 @@
 
 html,
 body {
+  padding: 0;
+  margin: 0;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 20px;
   color: var(--black-1000);
@@ -87,6 +89,11 @@ body.fixed {
   align-items: stretch;
 }
 
+@media screen and (max-width: 768px) {
+  .wrapper {
+    padding-inline: 0.5rem;
+  }
+}
 .image-n-card {
   display: flex;
   gap: 3rem;
@@ -95,17 +102,46 @@ body.fixed {
   flex: 1 1 auto;
 }
 .image-n-card--right {
-  flex: 0 1 25%;
+  flex: 0 0 min(30%, 400px);
 }
 .image-n-card .image {
   width: 100%;
   height: auto;
 }
 
+@media screen and (max-width: 768px) {
+  .image-n-card {
+    flex-direction: column;
+    gap: 2rem;
+  }
+  .image-n-card--left, .image-n-card--right {
+    flex-basis: 100%;
+  }
+}
+.product-name {
+  font-weight: 600;
+  font-size: 1.2em;
+}
+
 .card {
   display: flex;
   flex-direction: column;
   gap: 2rem;
+}
+
+.small {
+  font-size: 0.85em;
+  color: var(--black-600);
+  max-width: 60ch;
+}
+
+.price--current {
+  font-weight: 700;
+  font-size: 1.2em;
+}
+.price--old {
+  color: var(--black-600);
+  text-decoration: line-through;
 }
 
 .details {
